@@ -3,6 +3,9 @@ package testcase;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import org.json.JSONObject;
 import org.testng.Assert;
@@ -15,10 +18,14 @@ import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.restassured.RestAssured;
+import io.restassured.http.Header;
+import io.restassured.http.Headers;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import pojo.PatchUpdateUsers2_Payload;
+import static io.restassured.RestAssured.*;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class API_Validation {
 
@@ -138,7 +145,7 @@ public class API_Validation {
 		File file = new File("src/test/resources/postCreateNewUserUsingExternalFile.json");
 		ObjectMapper objectMapper = new ObjectMapper();
 		PatchUpdateUsers2_Payload payload = objectMapper.readValue(file, PatchUpdateUsers2_Payload.class);
-	
+		
 		RequestSpecification given = RestAssured.given();
 		given.header("x-api-key", "reqres-free-v1");
 		given.contentType("application/json");
@@ -151,7 +158,100 @@ public class API_Validation {
 		System.out.println("Response Body: " + responseBody);
 		System.out.println("TestCase 6 : postCreateNewUserUsingExternalFile PASSED\n");
 	}
-	
+
+	@Test
+	public void getListOfUsersInPage1() {
+
+		// API Response Validation
+
+		System.out.println("\nTestCase 7");
+		RequestSpecification given = RestAssured.given();
+		given.header("x-api-key", "reqres-free-v1");
+		Response response = given.request(Method.GET, "api/users?page=1");
+
+		// Validate the response status code
+		int actualStatusCode = response.getStatusCode();
+		int expectedStatusCode = 200; // 200 - OK
+		System.out.println("\nActual Status Code: " + actualStatusCode);
+		Assert.assertEquals(actualStatusCode, expectedStatusCode, "GET - LIST USERS Fail");
+
+		// Get the response body as a string
+		String responseBody = response.asPrettyString();
+		System.out.println("\nResponse Body: " + responseBody);
+
+		// Get the status line of the response
+		String statusLine = response.getStatusLine();
+		System.out.println("\nStatus Line: " + statusLine);
+
+		// Get the headers from the response
+		System.out.println("\nHeaders:");
+		Headers headers = response.getHeaders();
+		for (Header header : headers) {
+			String name = header.getName();
+			String value = header.getValue();
+			System.out.println(name + ": " + value);
+		}
+
+		// Get the content type of the response
+		String contentType = response.getContentType();
+		System.out.println("\nContent Type: " + contentType);
+
+		// Get the time taken for the request
+		long timeTaken = response.getTime();
+		System.out.println("\nTime Taken: " + timeTaken + " ms");
+
+		// Get the response size
+		int responseSize = response.getBody().asString().length();
+		System.out.println("\nResponse Size: " + responseSize + " bytes");
+
+		// Get the cookies from the response
+		Map<String, String> cookies = response.getCookies();
+		System.out.println("\nCookies:");
+		Set<Entry<String, String>> entrySet = cookies.entrySet();
+		for (Entry<String, String> entry : entrySet) {
+			String name = entry.getKey();
+			String value = entry.getValue();
+			System.out.println(name + ": " + value);
+		}
+
+		// Validate the name of the 6th user in the response
+		String name = response.jsonPath().getString("data[5].last_name");
+		Assert.assertEquals(name, "Ramos", "Name validation failed");
+
+		System.out.println("\nTestCase 7 : getListOfUsersInPage2 PASSED\n");
+
+	}
+
+	@Test(priority = 8)
+	public void digestAuth() {
+
+		// Digest Authentication
+		// BDD style using RestAssured
+		
+		System.out.println("\nTestCase 8");
+		
+		given()
+				.baseUri("https://postman-echo.com")
+				.auth().digest("postman", "password")
+
+				.when()
+					.get("/digest-auth")
+
+				.then()
+					.log().all()
+					.assertThat()
+					.statusCode(200)
+					
+				.and()
+					.assertThat()
+					.statusLine("HTTP/1.1 200 OK")
+					.assertThat()
+					.body(matchesJsonSchemaInClasspath("digest_auth_response_schema.json"));
+
+		System.out.println("\nTestCase 8 : digestAuth PASSED\n");
+
+	}
+
 	@AfterSuite
 	public void afterSuite() {
 		System.out.println("API Validation completed");
