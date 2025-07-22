@@ -1,41 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-21T13:43:19 IST" name="Default suite" finished-at="2025-07-21T13:43:25 IST" duration-ms="6080">
+  <suite started-at="2025-07-22T23:50:34 IST" name="Default suite" finished-at="2025-07-22T23:50:43 IST" duration-ms="8229">
     <groups>
     </groups>
-    <test started-at="2025-07-21T13:43:19 IST" name="Default test" finished-at="2025-07-21T13:43:25 IST" duration-ms="6080">
+    <test started-at="2025-07-22T23:50:34 IST" name="Default test" finished-at="2025-07-22T23:50:43 IST" duration-ms="8229">
       <class name="testcase.API_Validation">
-        <test-method is-config="true" signature="baseURI()[pri:0, instance:testcase.API_Validation@5bda8e08]" started-at="2025-07-21T13:43:19 IST" name="baseURI" finished-at="2025-07-21T13:43:20 IST" duration-ms="279" status="PASS">
+        <test-method is-config="true" signature="baseURI()[pri:0, instance:testcase.API_Validation@1ce24091]" started-at="2025-07-22T23:50:34 IST" name="baseURI" finished-at="2025-07-22T23:50:35 IST" duration-ms="256" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- baseURI -->
-        <test-method signature="deleteUser2()[pri:0, instance:testcase.API_Validation@5bda8e08]" started-at="2025-07-21T13:43:20 IST" name="deleteUser2" finished-at="2025-07-21T13:43:21 IST" duration-ms="1859" status="PASS">
+        <test-method signature="deleteUser2()[pri:0, instance:testcase.API_Validation@1ce24091]" started-at="2025-07-22T23:50:35 IST" name="deleteUser2" finished-at="2025-07-22T23:50:36 IST" duration-ms="1702" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteUser2 -->
-        <test-method signature="getListOfUsersInPage2()[pri:0, instance:testcase.API_Validation@5bda8e08]" started-at="2025-07-21T13:43:21 IST" name="getListOfUsersInPage2" finished-at="2025-07-21T13:43:22 IST" duration-ms="423" status="PASS">
+        <test-method signature="getListOfUsersInPage1()[pri:0, instance:testcase.API_Validation@1ce24091]" started-at="2025-07-22T23:50:36 IST" name="getListOfUsersInPage1" finished-at="2025-07-22T23:50:38 IST" duration-ms="1258" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getListOfUsersInPage1 -->
+        <test-method signature="getListOfUsersInPage2()[pri:0, instance:testcase.API_Validation@1ce24091]" started-at="2025-07-22T23:50:38 IST" name="getListOfUsersInPage2" finished-at="2025-07-22T23:50:38 IST" duration-ms="206" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getListOfUsersInPage2 -->
-        <test-method signature="patchUpdateUsers2()[pri:0, instance:testcase.API_Validation@5bda8e08]" started-at="2025-07-21T13:43:22 IST" name="patchUpdateUsers2" finished-at="2025-07-21T13:43:23 IST" duration-ms="1066" status="PASS">
+        <test-method signature="patchUpdateUsers2()[pri:0, instance:testcase.API_Validation@1ce24091]" started-at="2025-07-22T23:50:38 IST" name="patchUpdateUsers2" finished-at="2025-07-22T23:50:39 IST" duration-ms="918" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- patchUpdateUsers2 -->
-        <test-method signature="postCreateNewUser()[pri:0, instance:testcase.API_Validation@5bda8e08]" started-at="2025-07-21T13:43:23 IST" name="postCreateNewUser" finished-at="2025-07-21T13:43:24 IST" duration-ms="908" status="PASS">
+        <test-method signature="postCreateNewUser()[pri:0, instance:testcase.API_Validation@1ce24091]" started-at="2025-07-22T23:50:39 IST" name="postCreateNewUser" finished-at="2025-07-22T23:50:40 IST" duration-ms="778" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postCreateNewUser -->
-        <test-method signature="postCreateNewUserUsingExternalFile()[pri:0, instance:testcase.API_Validation@5bda8e08]" started-at="2025-07-21T13:43:24 IST" name="postCreateNewUserUsingExternalFile" finished-at="2025-07-21T13:43:25 IST" duration-ms="828" status="PASS">
+        <test-method signature="postCreateNewUserUsingExternalFile()[pri:0, instance:testcase.API_Validation@1ce24091]" started-at="2025-07-22T23:50:40 IST" name="postCreateNewUserUsingExternalFile" finished-at="2025-07-22T23:50:40 IST" duration-ms="574" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postCreateNewUserUsingExternalFile -->
-        <test-method signature="putUpdateUser2()[pri:0, instance:testcase.API_Validation@5bda8e08]" started-at="2025-07-21T13:43:25 IST" name="putUpdateUser2" finished-at="2025-07-21T13:43:25 IST" duration-ms="673" status="PASS">
+        <test-method signature="putUpdateUser2()[pri:0, instance:testcase.API_Validation@1ce24091]" started-at="2025-07-22T23:50:40 IST" name="putUpdateUser2" finished-at="2025-07-22T23:50:41 IST" duration-ms="820" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- putUpdateUser2 -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:testcase.API_Validation@5bda8e08]" started-at="2025-07-21T13:43:25 IST" name="afterSuite" finished-at="2025-07-21T13:43:25 IST" duration-ms="0" status="PASS">
+        <test-method signature="digestAuth()[pri:8, instance:testcase.API_Validation@1ce24091]" started-at="2025-07-22T23:50:41 IST" name="digestAuth" finished-at="2025-07-22T23:50:43 IST" duration-ms="1672" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- digestAuth -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:testcase.API_Validation@1ce24091]" started-at="2025-07-22T23:50:43 IST" name="afterSuite" finished-at="2025-07-22T23:50:43 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

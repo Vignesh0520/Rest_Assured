@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\vigne\AppData\Local\Temp\testng-eclipse-566381595\testng-customsuite.xml</span>
+                    <span>C:\Users\vigne\AppData\Local\Temp\testng-eclipse--578623195\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods,   6 passed</span>
+                    <span class="method-stats">8 methods,   8 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,6 +104,16 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="testcase.API_Validation" class="method navigator-link" hash-for-method="deleteUser2">deleteUser2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testcase.API_Validation" class="method navigator-link" hash-for-method="digestAuth">digestAuth</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testcase.API_Validation" class="method navigator-link" hash-for-method="getListOfUsersInPage1">getListOfUsersInPage1</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -158,6 +168,20 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="digestAuth">
+                  </a> <!-- digestAuth -->
+                  <span class="method-name">digestAuth</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getListOfUsersInPage1">
+                  </a> <!-- getListOfUsersInPage1 -->
+                  <span class="method-name">getListOfUsersInPage1</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="getListOfUsersInPage2">
                   </a> <!-- getListOfUsersInPage2 -->
                   <span class="method-name">getListOfUsersInPage2</span>
@@ -196,7 +220,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\vigne\AppData\Local\Temp\testng-eclipse-566381595\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\vigne\AppData\Local\Temp\testng-eclipse--578623195\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -245,36 +269,44 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(6);
+data.addRows(8);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'deleteUser2')
 data.setCell(0, 2, 'testcase.API_Validation')
-data.setCell(0, 3, 1859);
+data.setCell(0, 3, 1702);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'patchUpdateUsers2')
+data.setCell(1, 1, 'digestAuth')
 data.setCell(1, 2, 'testcase.API_Validation')
-data.setCell(1, 3, 1066);
+data.setCell(1, 3, 1672);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'postCreateNewUser')
+data.setCell(2, 1, 'getListOfUsersInPage1')
 data.setCell(2, 2, 'testcase.API_Validation')
-data.setCell(2, 3, 908);
+data.setCell(2, 3, 1258);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'postCreateNewUserUsingExternalFile')
+data.setCell(3, 1, 'patchUpdateUsers2')
 data.setCell(3, 2, 'testcase.API_Validation')
-data.setCell(3, 3, 828);
+data.setCell(3, 3, 918);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'putUpdateUser2')
 data.setCell(4, 2, 'testcase.API_Validation')
-data.setCell(4, 3, 673);
+data.setCell(4, 3, 820);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'getListOfUsersInPage2')
+data.setCell(5, 1, 'postCreateNewUser')
 data.setCell(5, 2, 'testcase.API_Validation')
-data.setCell(5, 3, 423);
+data.setCell(5, 3, 778);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'postCreateNewUserUsingExternalFile')
+data.setCell(6, 2, 'testcase.API_Validation')
+data.setCell(6, 3, 574);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'getListOfUsersInPage2')
+data.setCell(7, 2, 'testcase.API_Validation')
+data.setCell(7, 3, 206);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 7 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -307,31 +339,39 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">deleteUser2</span>
-                <span class="method-start">298 ms</span>
+                <span class="method-start">276 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">getListOfUsersInPage1</span>
+                <span class="method-start">1982 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">getListOfUsersInPage2</span>
-                <span class="method-start">2161 ms</span>
+                <span class="method-start">3242 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">patchUpdateUsers2</span>
-                <span class="method-start">2586 ms</span>
+                <span class="method-start">3451 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">postCreateNewUser</span>
-                <span class="method-start">3655 ms</span>
+                <span class="method-start">4370 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">postCreateNewUserUsingExternalFile</span>
-                <span class="method-start">4564 ms</span>
+                <span class="method-start">5151 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">putUpdateUser2</span>
-                <span class="method-start">5396 ms</span>
+                <span class="method-start">5727 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">digestAuth</span>
+                <span class="method-start">6549 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">6117 ms</span>
+                <span class="method-start">8251 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
