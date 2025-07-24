@@ -6,7 +6,8 @@
       <class name="testcase.API_Validation">
         <methods>
           <include name="baseURI"/>
-          <include name="deleteUser2"/>
+          <include name="apiAuthenticationBDDStyle"/>
+          <include name="afterSuite"/>
         </methods>
       </class> <!-- testcase.API_Validation -->
     </classes>

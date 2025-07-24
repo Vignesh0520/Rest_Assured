@@ -224,7 +224,7 @@ public class API_Validation {
 
 	}
 
-	@Test(priority = 8)
+	@Test(priority = 6)
 	public void digestAuth() {
 
 		// Digest Authentication
@@ -254,7 +254,7 @@ public class API_Validation {
 
 	}
 	
-	@Test(priority = 9)
+	@Test(priority = 7)
 	public void apiResponseValidation_BDDStyle () {
 		
 		// Load the expected JSON schema file for response validation
@@ -296,7 +296,7 @@ public class API_Validation {
 		System.out.println("\nTestCase 9 : apiResponseValidation_BDDStyle PASSED\n");
 	}
 	
-	@Test(priority = 10)
+	@Test(priority = 8)
 	public void apiAuthenticationBDDStyle() {
 		 
 		// Authentication using Basic Auth
