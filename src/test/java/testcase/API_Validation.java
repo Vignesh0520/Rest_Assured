@@ -21,11 +21,13 @@ import io.restassured.RestAssured;
 import io.restassured.http.Header;
 import io.restassured.http.Headers;
 import io.restassured.http.Method;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import pojo.PatchUpdateUsers2_Payload;
 import static io.restassured.RestAssured.*;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static org.hamcrest.Matchers.*;
 
 public class API_Validation {
 
@@ -250,6 +252,110 @@ public class API_Validation {
 
 		System.out.println("\nTestCase 8 : digestAuth PASSED\n");
 
+	}
+	
+	@Test(priority = 9)
+	public void apiResponseValidation_BDDStyle () {
+		
+		// Load the expected JSON schema file for response validation
+		File schemaFile = new File("src/test/resources/getListOfUsersInPage1_schema.json");
+		
+		// BDD-style RestAssured test
+		RestAssured.given()
+		
+			// Set the base URI of the API
+			.baseUri("https://reqres.in/")
+			// Set the API key in the request header 
+			.header("x-api-key", "reqres-free-v1")
+			// Set the content type for request headers
+		    .headers("Content-Type", "application/json")
+		    // Log request details to the console
+		    .log().all()
+		.when()
+			.get("api/users?page=1") // sending GET request to the API
+		.then()
+			// log the response details
+			.log().all()
+			.assertThat() 
+			// validate the status code
+			.statusCode(200) 
+			// validate the status line
+			.statusLine("HTTP/1.1 200 OK") 
+			// validate the response body against the schema
+			.body(JsonSchemaValidator.matchesJsonSchema(schemaFile)) 
+			// validate the content type header
+			.header("Content-Type", "application/json; charset=utf-8")
+			// validate response time is less than 2000 ms
+			.time(lessThan(2000L))
+		    .body("data[4].last_name", equalTo("Morris")) 
+		    .body("data[0].email", equalTo("george.bluth@reqres.in"))
+		    .body("total_pages", equalTo(2))
+		    .body("support.url", equalTo("https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral"))
+		    .body("data[5].first_name", equalTo("Tracey"));
+
+		System.out.println("\nTestCase 9 : apiResponseValidation_BDDStyle PASSED\n");
+	}
+	
+	@Test(priority = 10)
+	public void apiAuthenticationBDDStyle() {
+		 
+		// Authentication using Basic Auth
+		RestAssured.given()
+	    			.auth().basic("postman", "password")
+	    		.when()
+	    			.get("https://postman-echo.com/basic-auth")
+	    		.then()
+	    			.log().all()
+	    			.assertThat()
+	    			.statusCode(200);
+		System.out.println("\nBasic Authentication Test Passed\n");
+		
+		// Authentication using Digest Auth
+		RestAssured.given()
+	    				.auth().digest("postman", "password")
+	    			.when()
+	    				.get("https://postman-echo.com/digest-auth")
+	    			.then()
+	    				.log().all()
+	    				.assertThat()
+	    				.statusCode(200);
+		System.out.println("\nDigest Authentication Test Passed\n");
+		
+		// API Key Authentication - Query Parameter
+		RestAssured.given()
+	    				.queryParam("appid", "f0829f0518138619d24e8141e13f55d0")
+	    			.when()
+	    				.get("https://api.openweathermap.org/data/2.5/weather?q=London")
+	    			.then()
+	    				.log().all()
+	    				.assertThat()
+	    				.statusCode(200);
+		System.out.println("\nAPI Key Authentication Test Passed\n");
+		
+		// Bearer Token Authentication - Header
+		RestAssured.given()
+	    				.header("Authorization", "Bearer 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")
+	    			.when()
+	    				.get("https://api.github.com/user/repos")
+	    			.then()
+	    				.log().all()
+	    				.assertThat()
+	    				.statusCode(200);
+		System.out.println("\nBearer Token Authentication Test Passed\n");
+		
+		// OAuth 2.0 Authentication - Header
+		RestAssured.given()
+	    				.auth().oauth2("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")
+	    			.when()
+	    				.get("https://api.github.com/user/repos")
+	    			.then()
+	    			.log().all()
+	    			.assertThat()
+	    			.statusCode(200);
+		System.out.println("\nOAuth 2.0 Authentication Test Passed\n");
+		
+		System.out.println("\nTestCase 10 : apiAuthenticationBDDStyle PASSED\n");
+	
 	}
 
 	@AfterSuite
