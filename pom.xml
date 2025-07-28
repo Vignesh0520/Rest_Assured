@@ -66,5 +66,48 @@
     	<version>2.20.0</version>
 	</dependency>
 	
+	  	<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+	<dependency>
+    	<groupId>com.aventstack</groupId>
+    	<artifactId>extentreports</artifactId>
+    	<version>5.1.2</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
+	<dependency>
+    	<groupId>tech.grasshopper</groupId>
+    	<artifactId>extentreports-cucumber7-adapter</artifactId>
+    	<version>1.14.0</version>
+	</dependency>
+  
+	<!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+	<dependency>
+	    <groupId>net.masterthought</groupId>
+	    <artifactId>cucumber-reporting</artifactId>
+	    <version>5.9.0</version>
+	</dependency>
+  	
+  	<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+	<dependency>
+    	<groupId>io.cucumber</groupId>
+    	<artifactId>cucumber-java</artifactId>
+    	<version>7.23.0</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+	<dependency>
+    	<groupId>io.cucumber</groupId>
+    	<artifactId>cucumber-junit</artifactId>
+    	<version>7.23.0</version>
+    	<scope>test</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+	<dependency>
+    	<groupId>org.apache.poi</groupId>
+    	<artifactId>poi-ooxml</artifactId>
+    	<version>5.4.1</version>
+	</dependency>
+		
   </dependencies>
 </project>
